@@ -12,6 +12,14 @@
 \section{misc.}
 
 \begin{definition}
+\label{def-fiber}
+
+If $X$ and $Y$ are sets and $f: X \rightarrow Y$ is a function, then the \textbf{fiber} of $y \in Y$ is the pre-image of $y$ under $f$.
+
+\end{definition}
+
+
+\begin{definition}
 \label{def-collection-all-functions}
 
 If $X$ and $Y$ are sets, then the collection of all functions $f: X \rightarrow Y$ is denoted $Y^X$.
@@ -34,6 +42,16 @@ We will use the notation $f(x_1, \ldots, x_k)$ to refer to an arbitrary image of
 \label{def-indexed-family}
 
 An \textbf{index family} is a function $f: I \rightarrow \mathcal{S}$ where $I$ is any set and $\mathcal{S}$ is a collection of sets. $I$ is called the \textbf{index set}. We often forego notating the function explicitly and just refer to $\{S_i\}$ as a index family.
+
+\end{definition}
+
+
+\begin{definition}
+\label{def-eqrel-congruent-operator}
+
+If $A$ is a set and $f$ is a $k$-ary operator on $A$ and $\squiggle$ is an equivalence relation on $A$, then $\squiggle$ is \textbf{congruent with respect to $f$} if for all $(a_1, \ldots, a_k)$ and $(b_1, \ldots, b_k)$ in $A^k$ such that $a_i \squiggle b_i$, then $f([a_1], \ldots, [a_k]) \squiggle f([b_1], \ldots, [b_k])$.
+
+This allows one to define a $k$-ary operator $F$ on $A\\ \squiggle$ by $F([a_1], \ldots, [a_k]) = [f(a_1, \ldots, a_k)]$
 
 \end{definition}
 
@@ -62,7 +80,7 @@ A \textbf{subalgebra} of $\mathhcal{A}$ is a pair $(S, \{\sigma_i\})$ where $S \
 \end{definition}
 
 \begin{proposition}
-\label{proposition-intersection-subalgebras}
+\label{prop-intersection-subalgebras}
 
 If $\mathcal{A} = (X, \{\sigma_i\})$ is an abstract algebra and $\mathcal{S}$ is a collection of subalgebras of $\mathcal{A}$, then $(\bigcap \mathcal{S}, \{\sigma_i\})$ is a subalgebra of $\mathcal{A}$.
 
@@ -99,7 +117,7 @@ Given $(X, \{\sigma_i\})$ and $(Y, \{\phi_i\})$ are similar algebras, then $f: X
 
 
 \begin{proposition}
-\label{proposition-image-of-homomorphism-is-subalgebra}
+\label{prop-image-of-homomorphism-is-subalgebra}
 
 Given $(X, \{\sigma_i\})$ and $(Y, \{\phi_i\})$ are similar algebras and $f: X \rightarrow Y$ is an algebra homomorphism, then $(img f, \{\phi_i\})$ is a subalgebra of $(Y, \{\phi_i\})$.
 
@@ -109,5 +127,35 @@ Given $(X, \{\sigma_i\})$ and $(Y, \{\phi_i\})$ are similar algebras and $f: X \
 TODO?
 
 \end{proof}
+
+
+\begin{definition}
+\label{def-algebra-homomorphism-kernel}
+
+Given $(X, \{\sigma_i\})$ and $(Y, \{\phi_i\})$ are similar algebras and $f: X \rightarrow Y$ is an algebra homomorphism, then the \textbf{kernel} of $f$ is the collection of all fibers of $y \in img f$.
+
+\end{definition}
+
+
+\begin{lemma}
+\label{lemma-kernel-of-homomorphism-is-partition}
+
+Given $(X, \{\sigma_i\})$ and $(Y, \{\phi_i\})$ are similar algebras and $f: X \rightarrow Y$ is an algebra homomorphism, and $K$ is the kernel of $f$, then $K$ is a partition of $X$. 
+
+Due to the correspondence between partitions and equivalence relations, we can define an equivalence relation $\squiggle$ (TODO: fix this command) on $X$ by $a \squiggle b$ iff $f(a) = f(b)$.
+
+\end{lemma}
+
+\begin{proof}
+TODO?
+
+\end{proof}
+
+
+\begin{definition}
+\label{def-congruence-relation}
+If $\mathcal{A} = (X, \{\sigma_i\})$ is an algebra and $\squiggle$ is an equivalence relation on $X$, then $\squiggle$ is a \textbf{congruence relation on $\mathcal{A}$} if $\squiggle$ is congruent with respect to each $\sigma_i$.
+
+\end{definition}
 
 \end{document}
