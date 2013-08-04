@@ -129,6 +129,20 @@ TODO?
 \end{proof}
 
 
+\begin{lemma}
+\label{lemma-homomorphisms-generator-unique}
+
+If $\mathcal{A}$ and $\mathcal{B}$ are algebras and $X \subseteq \mathcal{A}$ generates $\mathcal{A}$, and if $h_1, h_2: \mathcal{A} \rightarrow \mathcal{B}$ are homomorphisms such that for all $x \in X$, $h_1(x) = h_2(x)$, then $h_1 = h_2$.
+
+\end{lemma}
+
+\begin{proof}
+
+The set $\{ a \in A : h_1(a) = h_2(a) \}$ is non-empty and closed under the operations of $\mathcal{A}$, so it's a subalgebra of $\mathcal{A}$. It contains the generator $X$, so it must in fact be the whole algebra $\mathcal{A}$.
+
+\end{proof}
+
+
 \begin{definition}
 \label{def-algebra-homomorphism-kernel}
 
