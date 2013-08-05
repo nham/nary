@@ -223,4 +223,46 @@ If $X$ is a set, $f: X \rightarrow X$ a function and $a \in X$, then there is a 
 
 \end{theorem}
 
+\begin{proof}
+TODO? Or omitted? It's not too hard, just slightly tedious.
+
+Also, it uses the uniqueness of an algebra homomorphism taking fixed values on a generator,
+
+\end{proof}
+
+\begin{definition}
+\label{def-addition-multiplication-naturals}
+
+By the recursion theorem we can define functions $\bigtriangleup, \star: \mathbb{N}^2 \rightarrow \mathbb{N}$, called \textbf{addition} and \textbf{multiplication}, respectively, as follows. For all $m, n \in \mathbb{N}$:
+
+1. $m \bigtriangleup 0 := m$ 
+2. $m \bigtriangleup s(n) := s(m \bigtriangleup n)$
+3. $m \star 0 := 0$
+4. $m \star s(n) = (m \star n) \btu m$
+
+\end{definition}
+
+\begin{theorem}
+\label{theorem-add-mult-monoids-distribute}
+
+$(\mathbb{N}, \btu, 0)$ is a commutative monoid, $(\mathbb{N}, \star, 1)$ is a commutative monoid and for all $m, n, p \in \mathbb{N}$, $m \star (n \btu p) = (m \star n) \btu (m \star p)$.
+
+\end{theorem}
+
+\begin{proof}
+
+    To prove $m \btu (n \btu p) = (m \btu n) \btu p$ for all $m, n, p \in \mathbb{N}$, we induct on $p$. $m \btu (n \btu 0) = m \btu n = (m \btu n) \btu 0)$. Also, if it's true for $p$, then $m \btu (n \btu s(p)) = m \btu s(n \btu p) = s(m \btu (n \btu p)) = s((m \btu n) \btu p) = (m \btu n) \btu s(p)$.
+
+    To prove that $0$ is a unit, we must only establish that $0 \btu m$ for all $m$. Another induction is in order: $0 \btu 0 = 0$, and if $0 \btu n = n$, then $0 \btu s(n) = $s(0 \btu n) = s(n)$.
+    
+    We also need this lemma: for all $n$, $n \btu 1 = 1 \btu n$, where $1$ is defined as $s(0)$. $n = 0$ holds, and if we assume it holds for $n$, then $s(n) \btu 1 = s(n) \btu s(0) = s(s(n) \btu 0) = s(s(n)) = s(s(n \btu 0)) = s(n \btu 1) = s(1 \btu n) = 1 \btu s(n)$.
+
+    At last we mount our attack on commutativity. Note that we have already proven that every $n \in \mathbb{N}$ commutes with both 0 and 1. Define
+    
+    $S = \{m \in \mathbb{N} : \forall n \in \mathbb{N} m \btu n = n \btu m\}$
+
+    We want to prove that $S = \mathbb{N}$. $0$ (and $1$) is in $S$. Now suppose $m \in S$. To prove that $s(m) \in S$, we induct on $n \in \mathbb{N}$. (Double induction!) Clearly $s(m)$ commutes with $0$. If $s(m)$ commutes with $n$, then $s(m) \btu s(n) = s(s(m) \btu n) = s(n \btu s(m)) = s(n \btu (1 \btu m)) = s((n \btu 1) \btu m) = s(s(n) \btu m) = s(n) \btu s(m)$.
+
+\end{proof}
+
 \end{document}
