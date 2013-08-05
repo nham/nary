@@ -204,4 +204,23 @@ TODO?
 
 \end{proof}
 
+\begin{definition}
+\label{def-natural-numbers}
+The \textbf{natural numbers} $\mathbb{N}$ is a set with $0 \in \mathbb{N}$ such that there is a function $s: \mathbb{N} \rightarrow \mathbb{N} - 0$ satisfying:
+
+1. $s$ is injective
+2. for all $X \subseteq \mathbb{N}$, if $0 \in X$ and $n \in X \implies s(n) \in X$, then $X = \mathbb{N}$
+\end{definition}
+
+
+\begin{theorem}
+\label{theorem-recursion-natural-numbers}
+
+If $X$ is a set, $f: X \rightarrow X$ a function and $a \in X$, then there is a unique function $h: \mathbb{N} \rightarrow X$ such that:
+
+1. $h(0) = a$
+2. $h(s(n) = f(h(n))$ for all $n \in \mathbb{N}$
+
+\end{theorem}
+
 \end{document}
