@@ -263,6 +263,16 @@ $(\mathbb{N}, \btu, 0)$ is a commutative monoid, $(\mathbb{N}, \star, 1)$ is a c
 
     We want to prove that $S = \mathbb{N}$. $0$ (and $1$) is in $S$. Now suppose $m \in S$. To prove that $s(m) \in S$, we induct on $n \in \mathbb{N}$. (Double induction!) Clearly $s(m)$ commutes with $0$. If $s(m)$ commutes with $n$, then $s(m) \btu s(n) = s(s(m) \btu n) = s(n \btu s(m)) = s(n \btu (1 \btu m)) = s((n \btu 1) \btu m) = s(s(n) \btu m) = s(n) \btu s(m)$.
 
+    Turning to multiplication, $m \star 1 = (m \star 0) \btu m = 0 \btu m = m$. Also, by induction, we have $1 \star 0 = 0$, and if $1 \star n = n$, then $1 \star s(n) = (1 \star n) \btu 1 = n \btu 1 = s(n)$, which establishes that $m \star 1 = m = 1 \star m$ for all $m$.
+
+    If $0 \star n = 0$, then $0 \star s(n) = (0 \star n) \btu 0) =0$, so each natural number also commutes with zero.
+
+    We can also establish left-distributivity, that is, $m \star (n \btu p) = (m \star n) \btu (m \star p)$. Clearly it holds for $p = 0$. If it holds for $p$, then $m \star (n \btu s(p)) = m \star s(n \btu p) = (m \star (n \btu p)) \btu m = ((m \star n) \btu (m \star p)) \btu m = (m \star n) \btu ((m \star p) \btu m) = (m \star n) \btu (m \star s(p))$
+
+    To obtain associativity for  multiplication, we have $m \star (n \star 0) = m \star n = (m \star n) \star 0$. Assuming that multiplication of $m, n, p$ is associative, we have $m \star (n \star s(p))$ = m \star ((n \star p) \btu n) = (m \star (n \star p)) \btu (m \star n) = ((m \star n) \star p) \btu (m \star n) = (m \star n) \star s(p)$. This establishes the induction on $p$. Note that the key ingredient was left-distributivity.
+
+    Finally, commutativity. Every $n \in \mathbb{N}$ commutes with $0$ and $1$, so a base cases is established. We are forced, it seems, to double-induct again, so we will prove by induction on $n$ that $n$ commutes with every $m \in \mathbb{N}$. To prove this fact for each particular $n$, we induct on $m$. Clearly $0$ commutes with everything, so assume $n$ commutes with everything as well. Then $s(n)$ commutes with zero, and assuming $s(n)$ commutes with $m$, we have $s(m) \star s(n) = (m \btu 1) \star s(n) = $.
+
 \end{proof}
 
 \end{document}
